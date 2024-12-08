@@ -64,6 +64,8 @@ class HTMLNode():
         """
         return the attributes and their values as string
         """
+        if self.props == None:
+            return ""
         result = ""
         for key in self.props:
             result += f' {key}="{self.props[key]}"'
@@ -75,3 +77,4 @@ class HTMLNode():
         HtmlNode(tag, value, children, props)
         """
         return f"HTMLNode({self.tag}, {self.value}, children: {self.children}, {self.props})"
+
